@@ -1,0 +1,99 @@
+.container {
+  width: 100vw;
+  max-height: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(2, 15, 32, 0.4), rgba(2, 15, 32, 0.4)), url("./assets/images/backround-full.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 24%;
+  display: block;
+  font-family: 'Arimo', sans-serif;
+}
+
+.span-container {
+  position: absolute;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 19px;
+  width: 11px;
+  transition: all 0.35s;
+  font-size: 14px;
+  display: flex;
+  gap: 15px;
+  padding: 11px 15px;
+  border-radius: 50%;
+  border: 1px transparent solid;
+}
+
+@media screen and (max-width: 1500px) {
+  .container {
+    background-image: linear-gradient(rgba(2, 15, 32, 0.4), rgba(2, 15, 32, 0.4)), url(./assets/images/stadium-background.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: block;
+  }
+}
+
+
+.green {
+  background-color: rgba(106, 191, 75, 0.7);
+}
+
+.green.clicked {
+  background-color: rgba(106, 191, 75, 1);
+}
+
+.blue {
+  background-color: rgba(56, 119, 238, 0.7);
+}
+
+.blue.clicked {
+  background-color: rgba(56, 119, 238, 1);
+}
+
+.span-container.clicked {
+  width: 100px;
+  border-radius: 40px;
+  opacity: 1;
+}
+
+.plusminus {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.plusminus:before,
+.plusminus:after {
+  content: "";
+  display: block;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transition: transform 0.35s, opacity 0.35s;
+  width: 100%;
+  height: 2px;
+}
+
+.plusminus:before {
+  transform: translateY(-50%);
+}
+
+.plusminus:after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* Styles for .plusminus when .span-container is clicked */
+.span-container.clicked .plusminus:before {
+  transform: translateY(-50%) rotate(-90deg);
+  opacity: 0;
+}
+
+.span-container.clicked .plusminus:after {
+  transform: translateY(-50%) rotate(0);
+}
